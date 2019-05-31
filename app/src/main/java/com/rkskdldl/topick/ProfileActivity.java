@@ -65,7 +65,6 @@ public class ProfileActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<User> call, Response<User> response) {
                             Log.d("success", response.body().toString());
-                            
                         }
 
                         @Override
