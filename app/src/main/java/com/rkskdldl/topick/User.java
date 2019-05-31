@@ -10,9 +10,9 @@ public class User {
     @SerializedName("phonenumber")
     @Expose
     public String phonenumber;
-    @SerializedName("DeviceId")
+    @SerializedName("deviceid")
     @Expose
-    public String DeviceId;
+    public String deviceid;
     @SerializedName("_point")
     @Expose
     public int  _point;
@@ -24,7 +24,7 @@ public class User {
 
         this.nickname = nickname;
         this.phonenumber = phonenumber;
-        DeviceId = deviceId;
+        deviceid = deviceId;
         this._point = _point;
         this._key = _key;
     }
@@ -48,11 +48,11 @@ public class User {
     }
 
     public String getDeviceId() {
-        return DeviceId;
+        return deviceid;
     }
 
     public void setDeviceId(String deviceId) {
-        DeviceId = deviceId;
+        deviceid = deviceId;
     }
 
     public int get_point() {

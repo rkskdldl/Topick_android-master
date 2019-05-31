@@ -2,6 +2,7 @@ package com.rkskdldl.topick;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.annotation.RequiresPermission;
@@ -64,6 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<User> call, Response<User> response) {
                             Log.d("success", response.body().toString());
+                            
                         }
 
                         @Override
@@ -74,6 +76,8 @@ public class ProfileActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "아이디를 4글자 이상 해주세요", Toast.LENGTH_SHORT);
                 }
+
+
             }
         });
     }

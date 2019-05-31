@@ -16,7 +16,7 @@ public class APIclient {
                     .create();
 
             retrofit= new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:3000")
+                    .baseUrl("http://topick.cafe24app.com")
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
         }
