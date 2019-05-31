@@ -60,20 +60,22 @@ public class ProfileActivity extends AppCompatActivity {
                     editor.commit();
                     //네트워크 통신 부분 시작
                     ApiInterface apiService = APIclient.getClient().create(ApiInterface.class);
-                    Call<User> call = apiService.registerAPI(new User(nickname.getText().toString(), GetPhoneNumber(getApplicationContext()), GetDeviceId(getApplicationContext()), 0, 0));
-                    call.enqueue(new Callback<User>() {
+                    Call<Object> call = apiService.registerAPI(new User(nickname.getText().toString(), GetPhoneNumber(getApplicationContext()), GetDeviceId(getApplicationContext()), 0, 0));
+                    call.enqueue(new Callback<Object>() {
                         @Override
-                        public void onResponse(Call<User> call, Response<User> response) {
+                        public void onResponse(Call<Object> call, Response<Object> response) {
                             Log.d("success", response.body().toString());
+                            Toast.makeText(getApplicationContext(), response.body().toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "응답 다음", Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
-                        public void onFailure(Call<User> call, Throwable t) {
+                        public void onFailure(Call<Object> call, Throwable t) {
                             Log.e("error", t.toString());
                         }
                     });
                 } else {
-                    Toast.makeText(getApplicationContext(), "아이디를 4글자 이상 해주세요", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "아이디를 4글자 이상 해주세요", Toast.LENGTH_SHORT).show();
                 }
 
 
